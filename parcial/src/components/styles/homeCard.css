@@ -1,0 +1,13 @@
+.custom-text{
+    color: rgb(68, 66, 68) !important;
+    font-size: 40px;
+    font-weight: bold;
+}
+.custom-values{
+    margin-top: 20px !important;
+}
+.custom-buttom{
+    margin-top: 25px !important;
+    width: 50% !important;
+    height: 40px;
+}
