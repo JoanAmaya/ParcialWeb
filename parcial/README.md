@@ -1,4 +1,4 @@
-# Parcial Reac Joan Amaya 202011318
+# Parcial React Joan Amaya 202011318
 
 Esta es una aplicación desarrollada en React que permite a los usuarios explorar un catálogo de alimentos, tiendas y gestionar su carrito de compras. La aplicación tiene como objetivo brindar una experiencia accesible y multilingüe, centrada en la reducción del desperdicio de alimentos.
 
