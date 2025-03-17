@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Parcial Reac Joan Amaya 202011318
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta es una aplicación desarrollada en React que permite a los usuarios explorar un catálogo de alimentos, tiendas y gestionar su carrito de compras. La aplicación tiene como objetivo brindar una experiencia accesible y multilingüe, centrada en la reducción del desperdicio de alimentos.
 
-## Available Scripts
+## Requisitos Previos
 
-In the project directory, you can run:
+Para ejecutar la aplicación es necesario contar con Node.js versión 18 o superior y npm versión 9 o superior. También es necesario disponer de conexión a internet para la instalación de las dependencias y para acceder a los recursos externos utilizados en la aplicación.
 
-### `npm start`
+## Instalación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Primero se debe clonar el repositorio del proyecto. Una vez dentro de la carpeta raíz, se deben instalar las dependencias. Es importante usar la opción `--legacy-peer-deps` para evitar conflictos en la resolución de versiones entre las diferentes dependencias. A continuación se detallan los comandos a ejecutar.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm install react-intl --legacy-peer-deps  
+npm install react-router-dom  
+npm install bootstrap  
 
-### `npm test`
+Otra opción es instalar todas las dependencias listadas en el package.json de una sola vez, usando el comando siguiente. En este caso también es necesario incluir la opción `--legacy-peer-deps`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm install --legacy-peer-deps
 
-### `npm run build`
+## Ejecución de la Aplicación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para ejecutar la aplicación en un entorno de desarrollo se debe utilizar el siguiente comando.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Esto levantará un servidor de desarrollo que se ejecutará en la dirección http://localhost:3000. Desde ahí se puede visualizar y probar la aplicación en el navegador.
 
-### `npm run eject`
+## Dependencias Principales
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Se utilizaron tres dependencias clave en el desarrollo de esta aplicación. La primera es react-intl, la cual permite la internacionalización de los textos en pantalla. La segunda es react-router-dom, que facilita la navegación entre pantallas a través de rutas. La tercera es bootstrap, que se empleó para mejorar el diseño y la experiencia de usuario, haciendo que la interfaz sea responsiva y estéticamente agradable.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Decisiones Técnicas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Se tomó la decisión de estructurar la aplicación en componentes funcionales, cada uno encargado de una responsabilidad específica. Por ejemplo, el componente Login se encarga de manejar el formulario de autenticación, mientras que HomeCard gestiona la navegación a través de enlaces visuales a otras secciones de la aplicación.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Se utilizaron importaciones de componentes de la librería react-bootstrap como Form, ya que proporciona componentes de formularios preconstruidos que se integran fácilmente con el diseño de la aplicación y garantizan una buena experiencia de usuario en dispositivos móviles y de escritorio.
 
-## Learn More
+El enrutamiento se realizó con react-router-dom para permitir la navegación entre las vistas sin necesidad de recargar la página. Se usaron los hooks useNavigate y useParams para gestionar la navegación dinámica según la selección del usuario.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para la internacionalización, se optó por react-intl debido a su facilidad para gestionar múltiples idiomas y formatos de mensajes. Se hizo uso del hook useIntl y del componente FormattedMessage para mostrar textos traducidos dinámicamente según la configuración de idioma seleccionada por el usuario. La decisión de usar react-intl también responde a su flexibilidad para manejar pluralización y formatos de fecha y número, aunque en este proyecto inicialmente solo se aplicaron traducciones simples de mensajes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+En cuanto a los estilos, se optó por dividirlos en archivos CSS individuales por componente. Esto permite un mejor mantenimiento y escalabilidad, ya que los estilos están organizados de acuerdo al componente que afectan. Por ejemplo, el archivo login.css contiene únicamente los estilos relacionados al componente Login.
 
-### Code Splitting
+Para garantizar que los nombres de las rutas se mantuvieran consistentes con el idioma actual, se manejaron las rutas dinámicamente en el componente HomeCard. Dependiendo del idioma configurado, las rutas cambian su valor, por ejemplo, 'MENU' o 'MENÚ'.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Finalmente, en el componente Food se realizó una validación de rutas para que al cambiar el idioma se actualice la ruta actual automáticamente. Además, se realizó una llamada a un endpoint externo para obtener la información de los productos, simulando una integración con una fuente de datos real.
