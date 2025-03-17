@@ -1,32 +1,57 @@
 import './styles/homeCard.css';
-import Form from 'react-bootstrap/Form';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { FormattedMessage, useIntl } from 'react-intl';
+
 
 function HomeCard() {
+  const intl = useIntl();
+  const locale = intl.locale;
+  const routeMenu = locale === 'es' ? 'MENÚ' : 'MENU';
+  const routeStore = locale === 'es' ? 'TIENDAS' : 'STORES';
+  const routeCart = locale === 'es' ? 'CARRO' : 'CART';
   return (
-    <div className="card mb-3" style={{maxWidth: "540px", backgroundColor: "#E6364639"}}>
-  <div className="row g-0">
-    
-    <div className="col-md-4">
-    <Link to="menu">
-      <img src="https://cdn-icons-png.flaticon.com/512/5470/5470133.png" className="img-fluid rounded-start" alt="..."/>
-      <h1>Menu</h1>
-      </Link>
+    <div className="home-card card mb-3">
+      <div className="row g-0 justify-content-center">
+        
+        
+        <div className="col-md-4 d-flex justify-content-center">
+          <Link to={`${routeMenu}`} className="icon-link d-flex flex-column align-items-center">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5470/5470133.png"
+              className="icon-img"
+              alt="Menu"
+            />
+            <p className="icon-text"><FormattedMessage id="menu" defaultMessage="MENU" /></p>
+          </Link>
+        </div>
+
+        
+        <div className="col-md-4 d-flex justify-content-center">
+          <Link to={`${routeStore}`} className="icon-link d-flex flex-column align-items-center">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/4690/4690069.png"
+              className="icon-img"
+              alt="Stores"
+            />
+            <p className="icon-text"><FormattedMessage id="tiendas" defaultMessage="STORES" /></p>
+          </Link>
+        </div>
+
+        
+        <div className="col-md-4 d-flex justify-content-center">
+          <Link to={`${routeCart}`} className="icon-link d-flex flex-column align-items-center">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2605/2605732.png"
+              className="icon-img"
+              alt="Cart"
+            />
+            <p className="icon-text"><FormattedMessage id="carro" defaultMessage="CART"/></p>
+          </Link>
+        </div>
+
+      </div>
     </div>
-    <div className="col-md-4">
-    <Link to="store">
-      <img src="https://cdn-icons-png.flaticon.com/512/4690/4690069.png" className="img-fluid rounded-start" alt="..."/>
-      <h1>Stores</h1>
-      </Link>
-    </div>
-    <div className="col-md-4">
-    <Link to="cart">
-      <img src="https://cdn-icons-png.flaticon.com/512/2605/2605732.png" className="img-fluid rounded-start" alt="..."/>
-      <h1>Cart</h1>   
-    </Link>
-    </div>
-  </div>
-</div>
   );
 }
 

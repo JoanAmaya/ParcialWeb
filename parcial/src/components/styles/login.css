@@ -1,24 +1,74 @@
-.rigth-side{
-    background-color: white  !important;
+
+.left-side {
+    background-color: #f9f4f2;
+    height: 100vh;
+    text-align: center;
+    color: #333;
+  }
+  
+  .right-side {
+    background-color: #1f3d35;
+    height: 100vh;
     display: flex;
-    background-size: cover !important;
-    align-content: center;
-    align-items: center;
     justify-content: center;
-
-}
-
-.left-side{
-    background-color: green !important;
-    height: 100vh; 
-    width: 100vw;
-    display: flex;
-    background-size: cover !important;
-    align-content: center;
     align-items: center;
-    justify-content: center;
-
-}
-.login-custom{
- margin-top: 250px;
-}
+  }
+  
+  
+  .logo-container h2 {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .logo-container .tagline {
+    font-size: 14px;
+    color: #c76935;
+    letter-spacing: 1px;
+  }
+  
+  
+  .login-custom {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  
+  .input-custom {
+    border-radius: 25px !important;
+    padding: 12px 20px;
+    border: none !important;
+    outline: none !important;
+  }
+  
+  .input-custom::placeholder {
+    color: #888;
+  }
+  
+  
+  .forgot-password {
+    color: #ccc;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    color: #fff;
+  }
+  
+  
+  .login-button {
+    border-radius: 25px;
+    width: 100%;
+    padding: 12px 0;
+    font-weight: bold;
+    background-color: #fff;
+    color: #1f3d35;
+    border: none;
+    transition: 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #c76935;
+    color: #fff;
+  }
+  
